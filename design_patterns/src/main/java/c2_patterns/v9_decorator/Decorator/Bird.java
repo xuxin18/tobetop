@@ -9,16 +9,16 @@ import c2_patterns.v9_decorator.component.MonkeyKing;
  * @package c2_patterns.v9_decorator.Decorator
  *
  * ConcreteDecorator
- * 鱼：具体的装饰类
+ * 鸟：具体的装饰类
  */
-public class Fish extends Change72 {
+public class Bird extends Change72 {
 
-    public Fish(MonkeyKing mk) {
+    public Bird(MonkeyKing mk) {
         super(mk);
     }
 
     @Override
     public void move() {
-        System.out.println("变成了鱼在游");
+        System.out.println("变成了鸟在飞");
     }
 }

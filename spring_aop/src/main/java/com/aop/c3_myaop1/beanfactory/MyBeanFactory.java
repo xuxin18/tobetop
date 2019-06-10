@@ -1,9 +1,9 @@
-package c3_myaop1.beanfactory;
+package com.aop.c3_myaop1.beanfactory;
 
 
-import c3_myaop1.aspect.MyAspect;
-import c3_myaop1.service.UserService;
-import c3_myaop1.service.impl.UserServiceImpl;
+import com.aop.c3_myaop1.aspect.MyAspect;
+import com.aop.c3_myaop1.service.UserService;
+import com.aop.c3_myaop1.service.impl.UserServiceImpl;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -13,7 +13,7 @@ import java.lang.reflect.Proxy;
  * @author xuxin
  * @version v1.0
  * @project to_be_top
- * @package c3_myaop1.beanfactory
+ * @package com.c3_myaop1.beanfactory
  * @date 12 14:${MIMUTE}
  * @modified
  * 编写工厂类生成代理

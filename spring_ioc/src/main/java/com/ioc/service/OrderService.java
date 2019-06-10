@@ -9,4 +9,5 @@ package com.ioc.service;
  * @modified
  */
 public interface OrderService {
+    public void addOrder();
 }

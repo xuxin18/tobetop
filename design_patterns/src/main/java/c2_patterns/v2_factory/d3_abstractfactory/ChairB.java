@@ -8,5 +8,9 @@ package c2_patterns.v2_factory.d3_abstractfactory;
  * @date 20 14:${MIMUTE}
  * @modified
  */
-public class ChairB {
+public class ChairB implements Chair{
+    @Override
+    public void run() {
+        System.out.println("坐垫没什么功能");
+    }
 }

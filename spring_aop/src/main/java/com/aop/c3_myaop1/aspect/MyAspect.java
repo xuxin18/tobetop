@@ -1,10 +1,10 @@
-package c3_myaop1.aspect;
+package com.aop.c3_myaop1.aspect;
 
 /**
  * @author xuxin
  * @version v1.0
  * @project to_be_top
- * @package c3_myaop1.aspect
+ * @package com.c3_myaop1.aspect
  * @date 12 14:${MIMUTE}
  * @modified
  *

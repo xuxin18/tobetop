@@ -11,6 +11,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>design_patterns</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>../jvm</module>
+        <module>../spring_aop</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.1</version>
+        </dependency>
+    </dependencies>
+
 
 
 </project>

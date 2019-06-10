@@ -26,8 +26,8 @@ public class ReentrantReadAndWriteLockDemo {
             threads[i]=new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    //get("啦啦啦");
-                    put(temp+"",temp + "倍快乐");
+                    get("啦啦啦");
+                    //put(temp+"",temp + "倍快乐");
                 }
             }, i+"");
             threads[i].start();

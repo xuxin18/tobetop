@@ -1,4 +1,7 @@
+package arraylist;
+
 import java.lang.reflect.Field;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -16,6 +19,8 @@ public class Test {
         Person p1 = new Person("张三");
         Person p2 = new Person("李四");
         Person p3 = new Person("王五");
+        LocalDate localDate = LocalDate.of(2019,1,1);
+        System.out.println(localDate);
 
         System.out.println(list.size());
         list.add(p1);

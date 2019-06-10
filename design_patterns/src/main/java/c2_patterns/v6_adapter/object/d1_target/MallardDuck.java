@@ -1,4 +1,4 @@
-package c2_patterns.v6_adapter.object;
+package c2_patterns.v6_adapter.object.d1_target;
 
 /**
  * @author xuxin
@@ -11,11 +11,11 @@ package c2_patterns.v6_adapter.object;
 public class MallardDuck implements Duck {
     @Override
     public void quack() {
-        System.out.println("quack");
+        System.out.println("嘎嘎叫");
     }
 
     @Override
     public void fly() {
-        System.out.println("flying");
+        System.out.println("一次能飞500m");
     }
 }

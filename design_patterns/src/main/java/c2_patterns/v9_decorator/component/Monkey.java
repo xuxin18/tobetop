@@ -5,8 +5,12 @@ package c2_patterns.v9_decorator.component;
  * @version v1.0
  * @project to_be_top
  * @package c2_patterns.v9_decorator.component
- * @date 22 16:${MIMUTE}
- * @modified
+ * ConcreteComponent
+ * 猴子：被装饰的类
  */
-public class Monkey {
+public class Monkey implements MonkeyKing {
+    @Override
+    public void move() {
+        System.out.println("猴子在移动");
+    }
 }

@@ -1,4 +1,4 @@
-package c2_aop.service;
+package com.aop.c2_aop.service;
 
 public interface MemberService {
 

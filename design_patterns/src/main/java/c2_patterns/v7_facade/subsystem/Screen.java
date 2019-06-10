@@ -5,8 +5,14 @@ package c2_patterns.v7_facade.subsystem;
  * @version v1.0
  * @project to_be_top
  * @package c2_patterns.v7_facade.subsystem
- * @date 21 17:${MIMUTE}
- * @modified
+ * 幕布
  */
-public class TheaterLights {
+public class Screen {
+    public void down() {
+        System.out.println("放下幕布");
+    }
+
+    public void up() {
+        System.out.println("将幕布收起");
+    }
 }

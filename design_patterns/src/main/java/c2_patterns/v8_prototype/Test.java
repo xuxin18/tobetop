@@ -9,4 +9,12 @@ package c2_patterns.v8_prototype;
  * @modified
  */
 public class Test {
+    public static void main(String[] args) throws CloneNotSupportedException {
+        ConcreteBook cb = new ConcreteBook();
+        for (int i = 0; i < 5; i++) {
+            ConcreteBook copeBook = (ConcreteBook) cb.clone();
+            copeBook.show();
+            System.out.println(copeBook);
+        }
+    }
 }

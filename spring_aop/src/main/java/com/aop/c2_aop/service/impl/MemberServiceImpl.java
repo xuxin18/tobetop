@@ -1,7 +1,7 @@
-package c2_aop.service.impl;
+package com.aop.c2_aop.service.impl;
 
 
-import c2_aop.service.MemberService;
+import com.aop.c2_aop.service.MemberService;
 
 public class MemberServiceImpl implements MemberService {
 

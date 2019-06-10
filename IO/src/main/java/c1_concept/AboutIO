@@ -1,0 +1,45 @@
+java中的 IO 流框架 使用了 装饰者 模式
+
+
+InputStream:    输入字节流（抽象类，实现了 Closeable 接口（只有一个 close 方法，close（）： 关闭流和系统中与流相关的资源））
+    FileInputStream：    文件输入流（只继承 InputStream 类），在创建 文件输入字节流 时需要传入 File类型数据 或者 File的文件名
+    FilterInputStream
+        BufferedInputStream：    缓冲输入字节流（只继承了FilterInputStream，无法直接读取文件数据,默认缓冲区大小为 8192字节（即8kb）），在创键 缓冲输入字节流 的时候需要传入 InputStream 类型的字节流
+           例如：常用的创建方式：
+                BufferedInputStream bis = new BufferedInputStream(new FileInputStream(new File("F://a.txt")));
+    ObjectInputStream：      反序列化字节流（继承InputStream 实现了ObjectInput接口（提供了 readObject() 方法） 和 ObjectStreamConstants接口（和Serializable接口有关））
+        例如：常用的创建方式：
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("F://a.txt"));
+OutputStream：   输出字节流
+    FileOutputStream
+    FilterOutputStream
+        BufferedOutputStream
+    ObjectOutputStream：     序列化字节流
+
+字节流 只有 read 方法，当返回值是 -1，代表文件数据读取完毕
+
+Reader：     输入字符流(抽象类，实现了 Closeable 接口 和 Readable接口（只有一个 read（）方法）)
+    InputStreamReader：      输入字节转换字符流（只继承了 Reader 类），其实就是将 字节流进行了解码操作
+        FileReader：     文件输入字符流（只继承了 InputStreamReader），构造函数必须传入 File类型数据 或者 File的文件名（其实是 FileInputStream）
+    BufferedReader： 缓冲输入字符流（只继承了 Reader 类，无法直接读取文件数据，默认缓冲区大小为 8192个char（注意 jdk中 char 的大小固定为 2byte））。构造函数需要 传入 Reader 类型的 字符流
+        例如：常见的创建方式：
+            BufferedReader br = new BufferedReader(new FileReader("F://a.txt"));
+Writer:     输入字符流
+    OutputStreamWriter：
+        FileWriter：
+    BufferedWriter：
+缓冲字符流 相对 字节流和其他字符流多了个 readLine 方法，当返回值是 null 的时候，代表文件数据读取完毕
+
+注意： jdk 中的char 使用的编码方式始终为 UTF-16（其实具体是 utf-16be） 即 char的长度为2byte。那么为什么 getBytes 方法实际做的编码转换，当 getBytes方法没有指定编码方式时，
+        默认为当前运行环境的编码方式。char 的表示范围为 0-65535 (2^16-1=65535),如果某个汉字的编码超过了65535，则无法用char表示
+                char a = '覅';
+                System.out.println(a);
+                String s = String.valueOf(a);
+                System.out.println(s.getBytes("utf-8").length);
+                System.out.println(s.getBytes("gbk").length);
+                System.out.println(s.getBytes("iso-8859-1").length);
+                System.out.println(s.getBytes("utf-16").length);
+                System.out.println(s.getBytes("utf-16be").length);
+                System.out.println(s.getBytes("utf-16le").length);
+
+

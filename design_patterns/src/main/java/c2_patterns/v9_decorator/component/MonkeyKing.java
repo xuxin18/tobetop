@@ -5,8 +5,9 @@ package c2_patterns.v9_decorator.component;
  * @version v1.0
  * @project to_be_top
  * @package c2_patterns.v9_decorator.component
- * @date 22 16:${MIMUTE}
- * @modified
+ * Component：抽象接口，用以规范 被装饰类
+ * 齐天大圣
  */
-public interface House {
+public interface MonkeyKing {
+    public void move();
 }

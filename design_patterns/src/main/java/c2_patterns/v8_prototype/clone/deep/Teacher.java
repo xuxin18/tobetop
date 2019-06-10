@@ -1,4 +1,4 @@
-package c2_patterns.v8_prototype.clone.shallow;
+package c2_patterns.v8_prototype.clone.deep;
 
 /**
  * @author xuxin
@@ -8,10 +8,15 @@ package c2_patterns.v8_prototype.clone.shallow;
  * @date 22 15:${MIMUTE}
  * @modified
  */
-public class Teacher {
+public class Teacher implements Cloneable {
     private String name;
 
     public Teacher(String name) {
         this.name = name;
+    }
+
+    @Override
+    protected Teacher clone() throws CloneNotSupportedException {
+        return (Teacher) super.clone();
     }
 }

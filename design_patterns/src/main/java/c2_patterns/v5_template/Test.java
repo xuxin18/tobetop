@@ -9,4 +9,11 @@ package c2_patterns.v5_template;
  * @modified
  */
 public class Test {
+    public static void main(String[] args) {
+        Cooking bc = new Baocai();
+        bc.cookProcess();
+
+        Caixin cx = new Caixin();
+        cx.cookProcess();
+    }
 }

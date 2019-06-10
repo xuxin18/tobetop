@@ -14,9 +14,9 @@ import java.util.concurrent.*;
  *      BlockingQueue 为代表的阻塞队列
  *
  * Queue的3组方法：
- *                     抛出异常    返回特殊值
- *      插入（尾部）：    add(e)    offer(e)
- *      移除（头部）：   remove()   poll()
+ *                     抛出异常    返回特殊值   阻塞
+ *      插入（尾部）：    add(e)    offer(e)   put()
+ *      移除（头部）：   remove()   poll()     take()
  *      检查（头部）：   element()  peek()
  *
  * Queue 通常不允许插入null，尽管某些实现（例如：LinkedList）是允许的，但是也不建议

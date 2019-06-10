@@ -10,6 +10,8 @@ package c3_advance.v1_communication;
  *
  * 注意： wait()、notify()、notifyAll() 只能在 synchronized代码块中使用
  *                                     只能对进入同一监视器（获得过同一把锁）的线程起作用
+ *
+ * todo synchronized原理 http://www.importnew.com/20444.html#comment-747745
  */
 public class Demo2 {
     public static void main(String[] args) {
@@ -49,7 +51,7 @@ public class Demo2 {
                 //
                 Demo2.class.notify();
 
-                /* 发现执行 notify()后，这段代码也会执行。
+                /* 发现执行 notify()后，下面代码也会执行。
                    这说明 程序执行到notify()后并没有马上释放锁资源，只是通知 A线程可以开始争抢锁资源
                    等到 当前同步代码块内的代码执行完毕后，再释放锁资源
 

@@ -9,4 +9,9 @@ package c2_patterns.v8_prototype.clone.shallow;
  * @modified
  */
 public class Teacher {
+    private String name;
+
+    public Teacher(String name) {
+        this.name = name;
+    }
 }

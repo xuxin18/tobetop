@@ -1,7 +1,5 @@
 package com.mvc;
 
-import java.util.concurrent.ConcurrentHashMap;
-
 /**
  * @author xuxin
  * @version v1.0
@@ -20,13 +18,10 @@ import java.util.concurrent.ConcurrentHashMap;
  *          获取请求urk，从urlBeans集合中获取实例对象
  *          获取实例对象成功后，调用 urlMethods集合获取方法名称，使用反射机制执行
  */
-public class Test {
-    //springmvc容器对象：key 为 类名id；value为对象
-    private ConcurrentHashMap<String, Object> springmvcBeans = new ConcurrentHashMap<>();
 
-    //springmvc容器对象：key 为 请求地址；value 为 类
-    private ConcurrentHashMap<String, Object> urlBeans = new ConcurrentHashMap<>();
 
-    //springmvc容器对象：key 为 请求地址； value 为 方法名称
-    private ConcurrentHashMap<String, Object> urlMethods = new ConcurrentHashMap<>();
+public class TestApplication {
+    public static void main(String[] args) {
+
+    }
 }

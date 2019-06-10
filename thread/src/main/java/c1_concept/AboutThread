@@ -19,7 +19,7 @@
 多线程运用场景：迅雷多个资源同时下载，多人微信视频聊天
 
 线程的状态和生命周期（java.lang.Thread.State）
-    NEW               线程刚刚创建，还没有启动
+    NEW               线程刚刚创建，还没有调用start()
     RUNNABLE          线程调用了 start() 后，状态为 RUNNABLE
     BLOCKED           线程被阻塞，等待获取锁（获取锁后，进入并执行同步代码块中的内容）。如果 碰到synchronized、lock等关键字等占用临界区的情况
                           一旦获取到锁，状态就会改为 RUNNABLE。
@@ -38,7 +38,7 @@
                   所以，也有人将 RUNNABLE 分为 可执行 、 执行 两种状态
     NEW-->RUNNABLE->TERMINATED 这个过程不可逆
     加深理解：BLOCKED 和 WAITING
-             参考 https://www.zhihu.com/question/27654579 失业中的程序猿的回答
+            todo 参考 https://www.zhihu.com/question/27654579 失业中的程序猿的回答
              原创链接：https://www.uml-diagrams.org/java-thread-uml-state-machine-diagram-example.html
 
 线程安全：多个线程共享 同一个 全局变量 或 静态变量 ，当他们同时对改变量做 写操作 时，可能会发生数据
@@ -63,7 +63,7 @@ java内存模型（JMM）：是jvm中的一种规范。它用来确保java的并
                         所有的  变量存储在 主内存（Main Memeory）中
                                每条线程都有自己的 工作内存（Working Memory），工作内存中保存了该线程使用到的 变量的主内存副本拷贝
                                   线程对变量的所有操作（读取、赋值等）必须在工作内存中进行（不能直接读写主内存中的变量）
-                                  （ps：被volatile修饰的变量也不例外，所以volatile 不具备原子性）
+                                  （ps：被volatile修饰的变量也不例外，所以volatile 不具备原子性,验证可见 VolatileDemo）
                                不同的线程之间无法直接访问对方工作内存中的变量
 
                     内存间的主要交互操作：
@@ -226,3 +226,9 @@ Synchronized与Lock的对比：
             都可能获得该锁而调用相应方法。当一个线程请求成功后，JVM会记下持有锁的线程，并将计数器计为1。
             此时其他线程请求该锁，则必须等待。而该持有锁的线程如果再次请求这个锁，就可以再次拿到这个锁，
             同时计数器会递增。当线程退出一个synchronized方法/块时，计数器会递减，如果计数器为0则释放该锁。
+
+
+AQS 可参考文章：
+todo
+http://www.wangjialong.cc/2018/04/06/aqs_info/
+https://juejin.im/entry/5ae02a7c6fb9a07ac76e7b70

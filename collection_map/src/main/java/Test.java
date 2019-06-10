@@ -1,5 +1,3 @@
-package PACKAGE_NAME;
-
 /**
  * @author xuxin
  * @version v1.0
@@ -9,4 +7,12 @@ package PACKAGE_NAME;
  * @modified
  */
 public class Test {
+    public static void main(String[] args) {
+        String s = "000";
+
+        int i = 1;
+        System.out.println( "00" +(Integer.valueOf("001001" + "000") + i++));
+
+
+    }
 }

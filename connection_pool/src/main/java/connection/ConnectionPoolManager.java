@@ -14,7 +14,7 @@ import java.sql.Connection;
  *
  * 管理线程池
  */
-public class ConnectionManager {
+public class ConnectionPoolManager {
     public static DbBean dbBean = new DbBean();
     public static ConnectionPoolImpl connectionPool = new ConnectionPoolImpl(dbBean);
 

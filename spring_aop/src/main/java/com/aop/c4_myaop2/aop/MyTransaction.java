@@ -1,7 +1,7 @@
-package c4_myaop2.aop;
+package com.aop.c4_myaop2.aop;
 
-import c4_myaop2.annotation.MyAnnoT;
-import c4_myaop2.transaction.TransactionUtils;
+import com.aop.c4_myaop2.annotation.MyAnnoT;
+import com.aop.c4_myaop2.transaction.TransactionUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
  * @author xuxin
  * @version v1.0
  * @project to_be_top
- * @package c4_myaop2.aop
+ * @package com.c4_myaop2.aop
  * @date 12 19:${MIMUTE}
  * @modified
  *
@@ -34,7 +34,7 @@ public class MyTransaction {
     private TransactionUtils transactionUtils;
 
     //环绕通知
-    @Around("execution(* c4_myaop2.service.*.*(..) )")
+    @Around("execution(* com.aop.c4_myaop2.service.*.*(..) )")
     public void around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         //1.获取拦截到的方法上是否有注解；如果有则开启事务
         MyAnnoT myannot = getMyAnnoT(proceedingJoinPoint);
@@ -50,9 +50,9 @@ public class MyTransaction {
     }
 
     //使用 异常通知 进行 回滚事务
-    @AfterThrowing("execution(* c4_myaop2.service.*.*(..))")
+    @AfterThrowing("execution(* com.aop.c4_myaop2.service.*.*(..))")
     public void afterThrowing(){
-        //TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+        //TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();这种是 spring框架中的回滚
         transactionUtils.rollback();
     }
 
@@ -70,7 +70,6 @@ public class MyTransaction {
         Method targetMethod = target.getMethod(methodName, parameterTypes);
         //通过目标方法对象 获取指定的 注解
         MyAnnoT myannot = targetMethod.getDeclaredAnnotation(MyAnnoT.class);
-
 
         return myannot;
     }

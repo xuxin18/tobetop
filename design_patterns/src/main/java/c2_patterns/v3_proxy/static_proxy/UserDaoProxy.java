@@ -1,4 +1,4 @@
-package c2_patterns.v3_proxy;
+package c2_patterns.v3_proxy.static_proxy;
 
 /**
  * @author xuxin
@@ -6,6 +6,8 @@ package c2_patterns.v3_proxy;
  * @project to_be_top
  * @package c2_patterns.v3_proxy
  * 代理类
+ *
+ * 代理类需要和目标类实现相同的接口
  */
 public class UserDaoProxy implements IUserDao {
 

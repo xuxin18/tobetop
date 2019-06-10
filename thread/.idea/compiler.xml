@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/../collection_map/src/main/java/map/HashMapSource.java" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="collection_map" />
+        <module name="connection_pool" />
+        <module name="IO" />
+        <module name="jvm" />
+        <module name="mybatis" />
+        <module name="spring_aop" />
+        <module name="spring_ioc" />
+        <module name="spring_mvc" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="collection_map" target="1.8" />
+      <module name="connection_pool" target="1.8" />
+      <module name="design_patterns" target="1.8" />
+      <module name="IO" target="1.8" />
+      <module name="jvm" target="1.8" />
+      <module name="mybatis" target="1.8" />
+      <module name="reflection" target="1.8" />
+      <module name="spring_aop" target="1.8" />
+      <module name="spring_ioc" target="1.8" />
+      <module name="spring_mvc" target="1.8" />
+      <module name="thread" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

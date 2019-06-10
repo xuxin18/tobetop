@@ -5,8 +5,16 @@ package c2_patterns.v5_template;
  * @version v1.0
  * @project to_be_top
  * @package c2_patterns.v5_template
- * @date 21 10:${MIMUTE}
- * @modified
+ * 具体模板
  */
-public class Caixin {
+public class Caixin extends Cooking {
+    @Override
+    protected void pourVegetable() {
+        System.out.println("将菜心放入锅中");
+    }
+
+    @Override
+    protected void pourSauce() {
+        System.out.println("加入 蒜蓉、盐");
+    }
 }

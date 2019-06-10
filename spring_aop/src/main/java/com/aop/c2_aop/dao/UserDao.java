@@ -1,4 +1,4 @@
-package c2_aop.dao;
+package com.aop.c2_aop.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
  * @author xuxin
  * @version v1.0
  * @project to_be_top
- * @package c2_aop.dao
+ * @package com.c2_aop.dao
  * @date 11 15:${MIMUTE}
  * @modified
  */

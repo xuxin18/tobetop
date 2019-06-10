@@ -5,8 +5,30 @@ package c2_patterns.v10_strategy;
  * @version v1.0
  * @project to_be_top
  * @package c2_patterns.v10_strategy
- * @date 22 17:${MIMUTE}
- * @modified
+ *
+ * 定义一组算法
  */
-public class Strategy {
+public interface Strategy {
+    void algorithm();
+}
+
+class StrategyA implements Strategy{
+    @Override
+    public void algorithm() {
+        System.out.println("算法A");
+    }
+}
+
+class StrategyB implements Strategy{
+    @Override
+    public void algorithm() {
+        System.out.println("算法B");
+    }
+}
+
+class StrategyC implements Strategy{
+    @Override
+    public void algorithm() {
+        System.out.println("算法C");
+    }
 }

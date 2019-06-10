@@ -1,12 +1,13 @@
-package c4_myaop2.service.impl;
+package com.aop.c4_myaop2.service.impl;
 
 
-import c4_myaop2.annotation.MyAnnoT;
-import c4_myaop2.dao.UserDao;
-import c4_myaop2.service.UserService;
-import c4_myaop2.transaction.TransactionUtils;
+import com.aop.c4_myaop2.dao.UserDao;
+import com.aop.c4_myaop2.service.UserService;
+import com.aop.c4_myaop2.transaction.TransactionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /*
 	注意事项： 在使用spring事务的时候，service 不要使用 try-catch， 要将异常抛出给
@@ -21,7 +22,8 @@ public class UserServiceImpl implements UserService {
 	private TransactionUtils transactionUtils;
 
 	@Override
-	@MyAnnoT
+	//@MyAnnoT
+	@Transactional(propagation = Propagation.REQUIRED) //事务的传播行为默认为 required
 	public void add() {
 		userDao.add("wangmazi", 27);
 		int i = 1 / 0;

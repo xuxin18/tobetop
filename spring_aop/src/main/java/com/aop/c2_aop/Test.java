@@ -1,13 +1,13 @@
-package c2_aop;
+package com.aop.c2_aop;
 
-import c2_aop.service.UserService;
+import com.aop.c2_aop.service.UserService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @author xuxin
  * @version v1.0
  * @project to_be_top
- * @package c2_aop
+ * @package com.c2_aop
  * @date 11 10:${MIMUTE}
  * @modified
  */

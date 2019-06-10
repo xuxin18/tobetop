@@ -1,4 +1,4 @@
-package c2_patterns.v2_factory.simplefactory;
+package c2_patterns.v2_factory.d1_simplefactory;
 
 /**
  * @author xuxin

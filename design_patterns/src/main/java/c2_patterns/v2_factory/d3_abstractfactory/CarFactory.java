@@ -5,8 +5,15 @@ package c2_patterns.v2_factory.d3_abstractfactory;
  * @version v1.0
  * @project to_be_top
  * @package c2_patterns.v2_factory.d3_abstractfactory
- * @date 20 11:${MIMUTE}
- * @modified
+ *
+ * 汽车工厂
  */
-public interface CarFactory {
+public interface CarFactory{
+    //发动机工厂
+    Engine createEngine();
+    //座椅工厂
+    Chair createChair();
 }
+
+
+

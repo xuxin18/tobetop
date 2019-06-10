@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../IO/IO.iml" filepath="$PROJECT_DIR$/../IO/IO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../collection_map/collection_map.iml" filepath="$PROJECT_DIR$/../collection_map/collection_map.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../connection_pool/connection_pool.iml" filepath="$PROJECT_DIR$/../connection_pool/connection_pool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../design_patterns/design_patterns.iml" filepath="$PROJECT_DIR$/../design_patterns/design_patterns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jvm/jvm.iml" filepath="$PROJECT_DIR$/../jvm/jvm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mybatis/mybatis.iml" filepath="$PROJECT_DIR$/../mybatis/mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../reflection/reflection.iml" filepath="$PROJECT_DIR$/../reflection/reflection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../spring_aop/spring_aop.iml" filepath="$PROJECT_DIR$/../spring_aop/spring_aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../spring_ioc/spring_ioc.iml" filepath="$PROJECT_DIR$/../spring_ioc/spring_ioc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../spring_mvc/spring_mvc.iml" filepath="$PROJECT_DIR$/../spring_mvc/spring_mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thread.iml" filepath="$PROJECT_DIR$/thread.iml" />
+    </modules>
+  </component>
+</project>

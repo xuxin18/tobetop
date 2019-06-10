@@ -1,19 +1,19 @@
-package com.itmayiedu.utils;
+package sql;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * SQL拼接<br>
- * 作者: 每特教育-余胜军<br>
- * 联系方式:QQ644064779|WWW.itmayiedu.com<br>
+ *
+ * 
  */
 public class SQLUtils {
 	/**
 	 * 
 	 * 获取Insert语句后面values 参数信息<br>
-	 * 作者: 每特教育-余胜军<br>
-	 * 联系方式:QQ644064779|WWW.itmayiedu.com<br>
+	 *
+	 * 
 	 * 
 	 * @param sql
 	 * @return
@@ -29,8 +29,8 @@ public class SQLUtils {
 
 	/**
 	 * 
-	 * 获取select 后面where语句 作者: 每特教育-余胜军<br>
-	 * 联系方式:QQ644064779|WWW.itmayiedu.com<br>
+	 * 获取select 后面where语句
+	 * 
 	 * 
 	 * @param sql
 	 * @return
@@ -50,8 +50,8 @@ public class SQLUtils {
 
 	/**
 	 * 将SQL语句的参数替换变为?<br>
-	 * 作者: 每特教育-余胜军<br>
-	 * 联系方式:QQ644064779|WWW.itmayiedu.com<br>
+	 *
+	 * 
 	 * 
 	 * @param sql
 	 * @param parameterName

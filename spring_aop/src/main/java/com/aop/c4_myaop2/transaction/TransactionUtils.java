@@ -1,4 +1,4 @@
-package c4_myaop2.transaction;
+package com.aop.c4_myaop2.transaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -11,7 +11,7 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
  * @author xuxin
  * @version v1.0
  * @project to_be_top
- * @package c4_myaop2.transaction
+ * @package com.c4_myaop2.transaction
  * @date 12 18:${MIMUTE}
  * @modified
  * 编程事务（需要手动 begin、commit、rollback）
@@ -28,7 +28,8 @@ public class TransactionUtils {
 
     public TransactionStatus begin(){
         System.out.println("开启事务");
-        return  transactionStatus = dataSourceTransactionManager.getTransaction(new DefaultTransactionDefinition());
+        transactionStatus = dataSourceTransactionManager.getTransaction(new DefaultTransactionDefinition());
+        return transactionStatus;
     }
 
     public void commit(){

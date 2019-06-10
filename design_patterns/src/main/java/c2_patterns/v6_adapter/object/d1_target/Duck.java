@@ -1,4 +1,4 @@
-package c2_patterns.v6_adapter.object;
+package c2_patterns.v6_adapter.object.d1_target;
 
 /**
  * @author xuxin

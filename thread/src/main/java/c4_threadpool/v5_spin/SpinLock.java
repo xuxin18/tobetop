@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class SpinLock {
 
-    //定义一个标志-使用 AtomicReference 保存当前获取到锁的线程，保质了 compareAndSet操作的原子性
+    //定义一个标志-使用 AtomicReference 保存当前获取到锁的线程，保证了 compareAndSet操作的原子性
     private AtomicReference<Thread> owner = new AtomicReference<>();
 
     public void lock(){

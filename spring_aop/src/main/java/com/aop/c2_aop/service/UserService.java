@@ -1,4 +1,4 @@
-package c2_aop.service;
+package com.aop.c2_aop.service;
 
 //user 服务层
 public interface UserService {

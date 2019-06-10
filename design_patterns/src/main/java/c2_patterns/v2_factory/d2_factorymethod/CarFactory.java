@@ -8,5 +8,11 @@ package c2_patterns.v2_factory.d2_factorymethod;
  * @date 20 11:${MIMUTE}
  * @modified
  */
-public class CarFactory {
+public interface CarFactory {
+
+    public Car createCar();
 }
+
+
+
+

@@ -1,4 +1,4 @@
-package c2_patterns.v6_adapter.object;
+package c2_patterns.v6_adapter.object.d2_adaptee;
 
 /**
  * @author xuxin
@@ -10,11 +10,11 @@ package c2_patterns.v6_adapter.object;
 public class WildTurkey implements Turkey {
     @Override
     public void gobble() {
-        System.out.println("gobble gobble" );
+        System.out.println("咯咯" );
     }
 
     @Override
     public void fly() {
-        System.out.println("I'm flying a short distance");
+        System.out.println("火鸡一次飞100m");
     }
 }

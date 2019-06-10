@@ -1,16 +1,7 @@
-package com.itmayiedu.orm.utils;
+package orm.utils;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.sql.*;
 import java.util.List;
-import java.util.Map;
 
 public final class JDBCUtils {
 
@@ -39,15 +30,15 @@ public final class JDBCUtils {
 		/*
 		 * 获取URL
 		 */
-		URL = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8";
+		URL = "jdbc:mysql://10.168.1.200:3306/renren_fast";
 		/*
 		 * 获取用户名
 		 */
-		username = "root";
+		username = "admin";
 		/*
 		 * 获取密码
 		 */
-		password = "root";
+		password = "admin@2017!@#";
 		/*
 		 * 设置是否自动提交，一般为false不用改
 		 */

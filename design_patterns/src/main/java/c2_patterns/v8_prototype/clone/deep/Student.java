@@ -1,4 +1,4 @@
-package c2_patterns.v8_prototype.clone.shallow;
+package c2_patterns.v8_prototype.clone.deep;
 
 /**
  * @author xuxin
@@ -31,6 +31,7 @@ public class Student implements Cloneable {
     @Override
     protected Student clone() throws CloneNotSupportedException {
         Student student = (Student) super.clone();
+        student.teacher = teacher.clone();
         return student;
     }
 

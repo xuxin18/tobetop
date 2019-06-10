@@ -1,4 +1,4 @@
-package c2_patterns.v3_proxy.static_proxy;
+package c2_patterns.v3_proxy.dynamic_proxy.jdk;
 
 /**
  * @author xuxin

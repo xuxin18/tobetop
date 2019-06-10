@@ -1,4 +1,4 @@
-package c2_aop.transaction;
+package com.aop.c2_aop.transaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -11,7 +11,7 @@ import org.springframework.transaction.interceptor.DefaultTransactionAttribute;
  * @author xuxin
  * @version v1.0
  * @project to_be_top
- * @package c2_aop.transaction
+ * @package com.c2_aop.transaction
  * @date 11 15:${MIMUTE}
  * @modified
  *

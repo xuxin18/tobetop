@@ -1,4 +1,4 @@
-package c2_patterns.singleton;
+package c2_patterns.v1_singleton;
 
 /**
  * @author xuxin

@@ -8,5 +8,14 @@ package c2_patterns.v2_factory.d3_abstractfactory;
  * @date 20 14:${MIMUTE}
  * @modified
  */
-public class AudiFactory {
+public class AudiFactory implements CarFactory{
+    @Override
+    public Engine createEngine() {
+        return new EngineA();
+    }
+
+    @Override
+    public Chair createChair() {
+        return new ChairA();
+    }
 }

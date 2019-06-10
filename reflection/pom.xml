@@ -11,6 +11,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>reflection</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>../design_patterns</module>
+        <module>../collection_map</module>
+    </modules>
 
 
 </project>

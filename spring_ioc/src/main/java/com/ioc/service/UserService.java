@@ -9,4 +9,5 @@ package com.ioc.service;
  * @modified
  */
 public interface UserService {
+    public void add();
 }
