@@ -15,7 +15,7 @@ public class Demo {
         Thread t2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println(Thread.currentThread());
+                System.out.println(Thread.currentThread() + "啦啦啦啦啦");
             }
         }, "r线程");
 
@@ -28,7 +28,7 @@ public class Demo {
         System.out.println(t2.getId());
 
         //获取执行当前代码块的线程
-        System.out.println(Thread.currentThread());
+        System.out.println(Thread.currentThread());//输出结果：当前线程名 + priority + 当前线程所在的group
 
         //让执行当前代码的线程休眠 （不释放锁资源）
         System.out.println(Thread.currentThread() + "开始休眠100ms，当前时间为：" + System.currentTimeMillis());
@@ -40,7 +40,6 @@ public class Demo {
         t2.start();
 
         //查看指定线程的状态
-        t2.getState();
         System.out.println( t2.getState());
 
     }

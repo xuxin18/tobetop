@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <excludeFromCompile>
       <file url="file://$PROJECT_DIR$/../collection_map/src/main/java/map/HashMapSource.java" />
+      <file url="file://$PROJECT_DIR$/../collection_map/src/main/java/linkedlist/LinkedListSource.java" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">

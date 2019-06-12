@@ -19,7 +19,7 @@ public class Demo4 {
     public static void runABCWhenAllReady(){
         int runner = 3;
         //设置同时等待的线程数
-        CyclicBarrier cb = new CyclicBarrier(3);
+        CyclicBarrier cb = new CyclicBarrier(runner);
 
         final Random random = new Random();
         for (char runnerName='A'; runnerName<='C'; runnerName++){
@@ -34,7 +34,7 @@ public class Demo4 {
                 }
                 System.out.println("runner" + rn + "准备好了，就等其他跑步者准备了");
                 try {
-                    //每个线程调用 await()方法时，都会告诉 CyclicBarrier（循环栅栏）已到达栅栏，
+                    //每个线程调用 await()方法时，都会告诉 CyclicBarrier（循环栅栏）已到达栅栏（其实就是runner数-1）
                     // 然后将当前线程阻塞，放入一个 Lock的条件队列 中
                     //当所有线程都到达栅栏后，将所有的 Lock条件队列中的 线程放入到 Lock的等待队列中
                     // （条件锁调用signalAll() ,相当于notify所有thread）

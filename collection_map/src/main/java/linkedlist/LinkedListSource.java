@@ -79,7 +79,7 @@ import java.util.function.Consumer;
  * @since 1.2
  * @param <E> the type of elements held in this collection
  *
- * LinkedList 是一个继承宇 AbstractSequentialList 的 双向链表，它也可以被当做 堆栈、队列 或 双端队列进行操作。
+ * LinkedList 是一个继承于 AbstractSequentialList 的 双向链表，它也可以被当做 堆栈、队列 或 双端队列进行操作。
  *      实现了 List 接口，能对它进行队列操作
  *      实现了 Deque 接口，能将 LinkedList 当做双端队列使用
  *      实现了 Cloneable 接口， 能克隆
@@ -169,10 +169,10 @@ public class LinkedList<E>
         last = newNode;
 
         if (l == null)
-            //如果原链表为 空链表，需要额外更新头节点
+            //如果原链表为 空链表(获取到尾部节点为null，可以说明原链表为空链表)，需要额外更新头节点
             first = newNode;
         else
-            //将原尾节点的后置节点更新为现在的尾节点
+            //将原尾节点（由于头节点和原尾节点指向了同一个对象，所以其实这个地方更新的是头节点的next）的后置节点更新为现在的尾节点
             l.next = newNode;
 
         //修改LinkedList的 size 大小
@@ -495,9 +495,10 @@ public class LinkedList<E>
                 //如果 pred 为 null，则将 e 设置为 头节点
                 first = newNode;
             else
-                //其他情况 在 pred 后面追加就行
+                //其他情况 在 pred 后面追加就行（当第一次执行这里的代码时，pred的引用 和 first引用指向相同的对象，所以更新了 pred.next,first的next也
+                // 会更新，以后再执行这里的代码时，由于 pred的引用发生改变不再指向first引用指向的对象，所以以后更新 pred.next 对 first节点无影响）
                 pred.next = newNode;
-            //然后将 刚加入的 newNode 设置为 pred，为下次添加节点做准备
+            //然后将 刚加入的 newNode 设置为 pred（更新了pred的引用），为下次添加节点做准备
             pred = newNode;
         }
 
@@ -1087,10 +1088,10 @@ public class LinkedList<E>
         //当前节点的 元素值
         E item;
 
-        //前驱节点
+        //后置节点
         Node<E> next;
 
-        //后置节点
+        //前驱节点
         Node<E> prev;
 
         Node(Node<E> prev, E element, Node<E> next) {

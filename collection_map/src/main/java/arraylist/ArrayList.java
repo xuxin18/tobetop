@@ -246,7 +246,7 @@ public class ArrayList<E> extends AbstractList<E>
      * trimToSize() 方法举例：
      *   将elementData中空余的空间（包括null值）去除，例如：数组长度为10，其中只有前三个元素有值，其他为空，那么调用该方法之后，数组的长度变为3.
      *
-     *   注意：这是唯一一个 会 减小 ArrayList 容量的方法
+     *   注意：这是唯一一个 会 减小 ArrayList中 elementData数组 容量的方法
      */
     public void trimToSize() {
         modCount++;
@@ -453,7 +453,7 @@ public class ArrayList<E> extends AbstractList<E>
      *         proper sequence
      */
     public Object[] toArray() {
-        return Arrays.copyOf(elementData, size);
+        return Arrays.copyOf(elementData, size);// 这个地方其实省略了 this关键字，指代 调用了这个方法的对象
     }
 
     /**

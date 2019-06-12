@@ -104,10 +104,11 @@ public abstract class AbstractQueuedSynchronizer
      *
      * Node中保存了：
      *      线程的引用 thread
-     *      状态 waitStatus
+     *      线程状态 waitStatus
      *      前驱节点 prev
      *      后继节点 next
-     *
+     *      当前节点的 mode 为 共享还是独占
+     * todo aqs实现原理 https://juejin.im/entry/5ae02a7c6fb9a07ac76e7b70
      */
     static final class Node {
         /** Marker to indicate a node is waiting in shared mode
@@ -118,7 +119,7 @@ public abstract class AbstractQueuedSynchronizer
         static final Node EXCLUSIVE = null;
 
         /** waitStatus value to indicate thread has cancelled
-         因为超时或者中断，节点会被设置为取消状态，被取消的节点时不会参与到竞争中的，
+         因为超时或者中断，节点会被设置为取消状态，被取消的节点是不会参与到竞争中的，
          他会一直保持取消状态不会转变为其他状态；
          */
         static final int CANCELLED =  1;
@@ -131,7 +132,7 @@ public abstract class AbstractQueuedSynchronizer
 
         /** waitStatus value to indicate thread is waiting on condition
          节点在等待队列中，节点线程等待在Condition上，当其他线程对Condition调用了signal()后
-         ，改节点将会从等待队列中转移到同步队列中，加入到同步状态的获取中
+         ，该节点将会从等待队列中转移到同步队列中，加入到同步状态的获取中
          */
         static final int CONDITION = -2;
 

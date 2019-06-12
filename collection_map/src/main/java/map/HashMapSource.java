@@ -321,7 +321,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * Should be at least 4 * TREEIFY_THRESHOLD to avoid conflicts
      * between resizing and treeification thresholds.
      *
-     * 当hash桶中链表长度 >= 8时，但是 hash桶 小于 最下树化容量64时，
+     * 当hash桶中链表长度 >= 8时，但是 hash桶 小于 最小树化容量64时，
      * hash桶中的元素继续使用链表结构存储，但是会对 hash桶 进行扩容。
      *
      * （所以需要 让  hash桶中的元素第一次 以 tree 的形式存储需要满足两个条件：
@@ -460,7 +460,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * necessary. When allocated, length is always a power of two.
      * (We also tolerate length zero in some operations to allow
      * bootstrapping mechanics that are currently not needed.)
-     * hash桶，桶中可以存放的 Node 的数量为 2的N次方 或者初试化时为0
+     * hash桶，桶中可以存放的 Node 的数量为 2的N次方 或者初始化时为0
      */
     transient Node<K,V>[] table;
 
@@ -705,7 +705,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      *         previously associated <tt>null</tt> with <tt>key</tt>.)
      *
      *         ####
-     *         王表中插入或覆盖一个 key-value
+     *         往表中插入或覆盖一个 key-value
      */
     public V put(K key, V value) {
         //先根据 key，取的 hash值，然后调用 putVal()

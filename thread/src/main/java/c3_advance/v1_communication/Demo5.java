@@ -39,7 +39,7 @@ public class Demo5 {
         // 将 Callable接口的 实例 作为 构造参数 来创建 futureTask
         FutureTask<Integer> futureTask = new FutureTask<Integer>(callable);
 
-        //todo 此处实际是 采用了 适配器模式 将 FutureTask适配成Runnable 等学好适配器模式后在来分析
+        //todo 此处实际是 采用了 适配器模式 将 FutureTask适配成Runnable 等学好适配器模式后再来分析
         new Thread(futureTask).start();
 
 

@@ -53,9 +53,9 @@ java内存模型（JMM）：是jvm中的一种规范。它用来确保java的并
                     主内存、工作内存、线程的交互关系如下所示：
                                                                                use->
                             主                           工作内存  <---------------------> 线程
-                                    <-store,write                              <-assign
+                                    write<-store                              <-assign
                             内  -----------------------  工作内存  <----> 线程
-                                    read,load->
+                                    read->load
                             存                           工作内存  <----> 线程
 
                         ps：这里的内存划分 与 jvm内存结构的划分不是一个层次上的划分
@@ -99,6 +99,19 @@ java内存模型（JMM）：是jvm中的一种规范。它用来确保java的并
        当synchronized作用于静态方法是，锁对象是当前类的Class对象；
        当synchronized作用于代码块时，锁对象是synchronized(obj)中的这个obj，即锁对象可以是任意值。
             内置锁的原理：由底层由 锁对象 调用 wait() 和 notify()
+       synchronized的具体实现：
+            同步代码块采用 monitorenter、monitorexit 指令显示的实现，
+            同步方法则使用 ACC_SYNCHRONIZED 标记符隐式实现。
+                每个对象都有一个monitor，一个monitor只能被一个线程拥有。当一个线程执行到monitorenter指令时
+                会尝试获取相应对象的monitor，获取规则如下：
+                    monitorenter
+                        1.如果monitor的进入数为0，则该线程可以进入monitor，并将monitor进入数设置为1，该线程即为monitor的拥有者
+                        2.如果当前线程已经拥有该monitor，只是重新进入，则进入monitor的进入数 +1，所以 synchronized 关键字实现的锁是可重入锁
+                        3.如果monitor已被其他线程拥有，则当前线程进入阻塞状态，直到monitor的进入数为0，再重新尝试获取monitor
+                    monitorexit
+                        只有拥有相应对象的monitor的线程才能执行moniterexit指令。每执行一次该指令monitor进入数 -1，当进入数为0时当前线程
+                        释放monitor，此时其他阻塞的线程将可以尝试获取该monitor。
+                    ps：java对象头的 Mark Word 存放对象的hashcode或锁信息
 显式锁(ReentrantLock)：
     3个特点：可限时（tryLock（时间，单位））
             可中断（interruptibly（））

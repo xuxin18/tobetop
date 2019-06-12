@@ -44,6 +44,7 @@ public class volatileDemo {
         //isAlive() 检测线程是否存活 （happens-before：线程启动原则）
         System.out.println(threads[5].isAlive());
         ThreadGroup threadGroup = Thread.currentThread().getThreadGroup();
+        System.out.println(threadGroup);
 
 
         //发现每次打印结果都不一致，这说明当 多个线程 对同一个变量进行写操作时，基于volatile的变量的运算在并发下不是安全的

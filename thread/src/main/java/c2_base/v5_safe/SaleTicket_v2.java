@@ -7,7 +7,7 @@ package c2_base.v5_safe;
  * @package c2_base.v6_safe
  * 150张火车票，3个窗口同时抢票，使用多线程模拟抢票效果
  *
- * 这样写发现偶尔会出现 1号窗口和2号窗口卖了同一张票的情况
+ * SaleTicket_v1 中会出现 1号窗口和2号窗口卖了同一张票的情况
  * 解决方式一：内置锁 Synchronized
  * 解决方式二：显示锁 ReentrantLock
  */

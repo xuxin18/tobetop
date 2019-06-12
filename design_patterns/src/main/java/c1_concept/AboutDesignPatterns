@@ -193,3 +193,6 @@ java开发的五大原则（SOLID）：
             在应用 观察者模式时需要考虑 开发效率 和 运行效率 的问题。程序中包括一个被观察者，多个观察这，开发
             调试等内容会比较复杂。而且在java中消息的通知一般是顺序执行，那么一个观察者卡顿，会影响整体的执行效率。
             在这种情况下，一般会采用异步实现。
+
+todo https://juejin.im/post/5c8756e6e51d456cda2e7ff1
+todo https://design-patterns.readthedocs.io/zh_CN/latest/
