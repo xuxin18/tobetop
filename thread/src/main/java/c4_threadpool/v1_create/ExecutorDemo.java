@@ -22,7 +22,8 @@ import java.util.concurrent.TimeUnit;
  *                          任务队列已满时，线程池会创建新的线程，直到数量达到 maxPoolSize.
  *                          如果线程数等于 maxPoolSize，且任务队列已满，则已超出线程池的处理能力
  *                          线程池会拒绝处理任务而抛出异常
- *      keepAliveTime：当线程不执行任务时，最多能保持存活的时间。线程数量只增加不减少也不行。当负载降低时，可减少线程数量，如果一个线程空闲时间达到keepAliveTiime，该线程就退出。默认情况下线程池最少会保持corePoolSize个线程。
+ *      keepAliveTime：当线程不执行任务时，最多能保持存活的时间。线程数量只增加不减少也不行。当负载降低时，可减少线程数量，如果一个线程空闲时间达到keepAliveTiime，
+ *                      该线程就退出。默认情况下线程池最少会保持corePoolSize个线程。
  *      unit：时间单位
  *      workQueue：任务队列（是一个阻塞队列BlockingQueue），注意这个任务队列需要明确指定大小
  *      rejectedExecutionHandler：拒绝策略。当线程池和任务队列都满了后对 创建新线程的请求的处理方式
@@ -54,7 +55,7 @@ public class ExecutorDemo {
 
                 @Override
                 public void run() {
-                    log(Thread.currentThread().getName()+"begin run task :"+index);
+                    log(Thread.currentThread().getName()+" begin run task :"+index);
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {

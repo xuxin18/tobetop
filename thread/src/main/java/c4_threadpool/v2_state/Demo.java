@@ -26,7 +26,7 @@ public class Demo {
     public static void main(String[] args) {
         ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
         System.out.println("延迟3秒输出");
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1000000000; i++) {
             final int temp = i;
             scheduledThreadPool.schedule(new Runnable() {
                 @Override

@@ -6,7 +6,7 @@ package c4_threadpool.v5_spin;
  * @project to_be_top
  * @package c4_threadpool.v5_spin
  * @date 13 10:${MIMUTE}
- * @modified
+ * @modified 这个代码执行会导致 cpu占用率100%，轻易不要执行
  */
 public class TestSpinLock {
 
