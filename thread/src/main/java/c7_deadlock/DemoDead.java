@@ -28,9 +28,19 @@ package c7_deadlock;
  *          报错：找不到或无法加载主类。
  *      原因：这个 java 文件上有 包相关的 语句 package c7_deadlock;解决方式：
  *          带包编译：
- *              javac -d . DemoDead.java
+ *              javac -d . DemoDead.java （这个地方其实就是在当前目录下创建了 c7_deadlock 文件夹，并将 DemoDead.class 放在了该文件夹下）
+ *                  （发现： 直接 javac DemoDead.java，然后手动在当前目录下创建 c7_deadlock 文件夹 并将 DemoDead.class 剪切到  c7_deadlock 文件夹
+ *                   下，最后在DemoDead.java所在目录下执行 下面的语句也能执行成功）
  *          运行：
  *              java c7_deadlock.DemoDead 或者 java c7_deadlock/DemoDead
+ *          猜测：在使用 java DemoDead 命令执行类文件时，
+ *                  1.先查看当前目录下能否找到 DemoDead.class文件，找不到则报错
+ *                  2.找到则先扫描类文件中是否有包相关语句
+ *                      有，则检查 之前找到的 DemoDead.class 是否在 包下；
+ *                          不在，则报错
+ *                          在，则执行成功
+ *                      没有，则执行 DemoDead.class 文件成功
+ *
  */
 public class DemoDead implements Runnable{
 
